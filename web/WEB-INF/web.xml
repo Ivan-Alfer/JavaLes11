@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	id="WebApp_ID" version="3.1">
+	<display-name>JavaLes11</display-name>
+
+
+	<servlet>
+		<servlet-name>go_to_main_page</servlet-name>
+		<servlet-class>by.home.les11.controller.Controller</servlet-class>
+		<init-param>
+			<param-name>command</param-name>
+			<param-value>GO_TO_MAIN_PAGE</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>go_to_main_page</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>all_students</servlet-name>
+		<servlet-class>by.home.les11.controller.Controller</servlet-class>
+		<init-param>
+			<param-name>command</param-name>
+			<param-value>SHOW_ALL_STUDENTS</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>all_students</servlet-name>
+		<url-pattern>/all_students</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>all_subjects</servlet-name>
+		<servlet-class>by.home.les11.controller.Controller</servlet-class>
+		<init-param>
+			<param-name>command</param-name>
+			<param-value>SHOW_ALL_SUBJECTS</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>all_subjects</servlet-name>
+		<url-pattern>/all_subjects</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>all</servlet-name>
+		<servlet-class>by.home.les11.controller.Controller</servlet-class>
+		<init-param>
+			<param-name>command</param-name>
+			<param-value>SHOW_ALL</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>all</servlet-name>
+		<url-pattern>/all</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>all_about_student</servlet-name>
+		<servlet-class>by.home.les11.controller.Controller</servlet-class>
+		<init-param>
+			<param-name>command</param-name>
+			<param-value>SHOW_ALL_ABOUT_STUDENT</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>all_about_student</servlet-name>
+		<url-pattern>/student</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>go_to_add_student</servlet-name>
+		<jsp-file>/WEB-INF/jsp/add_new_student.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>go_to_add_student</servlet-name>
+		<url-pattern>/student/new_student</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>go_to_add_subject</servlet-name>
+		<jsp-file>/WEB-INF/jsp/add_new_subject.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>go_to_add_subject</servlet-name>
+		<url-pattern>/subject/new_subject</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>go_to_update_student</servlet-name>
+		<servlet-class>by.home.les11.controller.Controller</servlet-class>
+		<init-param>
+			<param-name>command</param-name>
+			<param-value>GO_TO_UPDATE_STUDENT</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>go_to_update_student</servlet-name>
+		<url-pattern>/student/update</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>go_to_update_subject</servlet-name>
+		<servlet-class>by.home.les11.controller.Controller</servlet-class>
+		<init-param>
+			<param-name>command</param-name>
+			<param-value>GO_TO_UPDATE_SUBJECT</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>go_to_update_subject</servlet-name>
+		<url-pattern>/subject/update</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>delete_student</servlet-name>
+		<servlet-class>by.home.les11.controller.Controller</servlet-class>
+		<init-param>
+			<param-name>command</param-name>
+			<param-value>DELETE_STUDENT</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>delete_student</servlet-name>
+		<url-pattern>/delete_student</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>delete_subject</servlet-name>
+		<servlet-class>by.home.les11.controller.Controller</servlet-class>
+		<init-param>
+			<param-name>command</param-name>
+			<param-value>DELETE_SUBJECT</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>delete_subject</servlet-name>
+		<url-pattern>/delete_subject</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>all_student_on_the_subject</servlet-name>
+		<servlet-class>by.home.les11.controller.Controller</servlet-class>
+		<init-param>
+			<param-name>command</param-name>
+			<param-value>ALL_STUDENT_ON_THE_SUBJECT</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>all_student_on_the_subject</servlet-name>
+		<url-pattern>/all_student_on_the_subject</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>go_to_add_mark</servlet-name>
+		<servlet-class>by.home.les11.controller.Controller</servlet-class>
+		<init-param>
+			<param-name>command</param-name>
+			<param-value>GO_TO_ADD_MARK</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>go_to_add_mark</servlet-name>
+		<url-pattern>/add_mark</url-pattern>
+	</servlet-mapping>
+	
+<!--  	<servlet>
+		<servlet-name>add_mark</servlet-name>
+		<servlet-class>by.home.les11.controller.Controller</servlet-class>
+		<init-param>
+			<param-name>command</param-name>
+			<param-value>ADD_MARK</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>add_mark</servlet-name>
+		<url-pattern>/add_mark</url-pattern>
+	</servlet-mapping> --> 
+
+</web-app>
