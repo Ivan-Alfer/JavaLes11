@@ -1,5 +1,6 @@
 package by.home.les11.dbdao;
 
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -9,7 +10,10 @@ import by.home.les11.domain.Student;
 
 public class DBStudentDao extends DBBaseDao<Student> {
 	
-	
+	public DBStudentDao(Connection connection) throws DaoException
+	{
+		super(connection);
+	}
 	
 	public DBStudentDao() throws DaoException{
 	}

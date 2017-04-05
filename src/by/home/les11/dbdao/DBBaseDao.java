@@ -34,13 +34,10 @@ public abstract class DBBaseDao<T> implements BaseDao<T> {
 
 	protected abstract void populatePrepareStatementForUpdateItem(PreparedStatement ps, T item) throws DaoException;
 
-	public DBBaseDao() throws DaoException {
-		try {
-			takeConnection();
-		} catch (DaoException e1) {
-			e1.printStackTrace();
-		}
-
+	public DBBaseDao(Connection connection) throws DaoException {
+		
+		con = connection;
+		
 		try {
 
 			stmt = con.createStatement();
@@ -56,7 +53,11 @@ public abstract class DBBaseDao<T> implements BaseDao<T> {
 		}
 	}
 	
-	private void takeConnection() throws DaoException {
+	public DBBaseDao() throws DaoException {
+		this(takeConnection());
+	}
+	
+	private static Connection takeConnection() throws DaoException {
 		DBResourceManager dbResourseManager = DBResourceManager.getInstance();
 		try {
 			Class.forName(dbResourseManager.getValue(DBResourceManager.DB_DRIVER));
@@ -64,7 +65,7 @@ public abstract class DBBaseDao<T> implements BaseDao<T> {
 			e.printStackTrace();
 		}
 		try {
-			con = DriverManager.getConnection(dbResourseManager.getValue(DBResourceManager.DB_URL), dbResourseManager.getValue(DBResourceManager.DB_USER), dbResourseManager.getValue(DBResourceManager.DB_PASSWORD));
+			return DriverManager.getConnection(dbResourseManager.getValue(DBResourceManager.DB_URL), dbResourseManager.getValue(DBResourceManager.DB_USER), dbResourseManager.getValue(DBResourceManager.DB_PASSWORD));
 		} catch (SQLException e) {
 			throw new DaoException();
 		}
