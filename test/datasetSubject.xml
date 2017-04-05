@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+	<subject SUBJECT_NAME = "math"/>
+	<subject SUBJECT_NAME = "rus"/>
+	<subject SUBJECT_NAME = "bel"/>
+	<subject SUBJECT_NAME = "eng"/>
+</dataset>

@@ -1,5 +1,6 @@
 package by.home.les11.dbdao;
 
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -8,6 +9,10 @@ import by.home.les11.dao.exception.DaoException;
 import by.home.les11.domain.Subject;
 
 public class DBSubjectDao extends DBBaseDao<Subject> {
+	
+	public DBSubjectDao(Connection con) throws DaoException{
+		super(con);
+	}
 
 	public DBSubjectDao() throws DaoException {
 	}
